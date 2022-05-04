@@ -2,8 +2,11 @@ package com.sorting;
 
 public class BubbleSort implements SortingAlgorithm {
 
-  public int[] sort(int numberOfNumbers, int[] tab) {
+  public long sort(int numberOfNumbers, int[] tab) {
     int originalNumberOfNumbers = numberOfNumbers;
+
+    long startTime = System.currentTimeMillis();
+    System.out.println("s:" + startTime);
     do {
       for (int i = 0; i < numberOfNumbers - 1; i++) {
         if (tab[i] > tab[i + 1]) {
@@ -14,8 +17,9 @@ public class BubbleSort implements SortingAlgorithm {
       }
       numberOfNumbers = numberOfNumbers - 1;
     } while (numberOfNumbers > 1);
+    long endTime = System.currentTimeMillis();
+    System.out.println("e:" + endTime);
 
-    System.out.println("Sorted by Bubble sort");
-    return tab;
+    return endTime - startTime;
   }
 }

@@ -1,0 +1,22 @@
+package com.sorting;
+
+public class SelectionSort implements SortingAlgorithm {
+
+  @Override
+  public long sort(int numberOfNumbersToSort, int[] tab) {
+    long startTime = System.currentTimeMillis();
+
+    for (int i = 0; i < tab.length; i++) {
+      int minIndex = i;
+      for (int j = i + 1; j < tab.length; j++) {
+        if (tab[j] < tab[minIndex]) minIndex = j;
+      }
+      int temp = tab[i];
+      tab[i] = tab[minIndex];
+      tab[minIndex] = temp;
+    }
+    long endTime = System.currentTimeMillis();
+
+    return endTime - startTime;
+  }
+}
