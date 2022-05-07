@@ -1,12 +1,9 @@
 package com.sorting;
 
-import java.time.Duration;
-import java.time.LocalTime;
-
 public class InsertSort implements SortingAlgorithm {
   @Override
   public long sort(int numberOfNumbersToSort, int[] tab) {
-    LocalTime startTime = LocalTime.now();
+    long startTime = System.nanoTime();
 
     for (int i = 1; i < numberOfNumbersToSort; i++) {
       int numberToInsert = tab[i - 1];
@@ -17,8 +14,8 @@ public class InsertSort implements SortingAlgorithm {
       }
       tab[j] = numberToInsert;
     }
-    LocalTime endTime = LocalTime.now();
+    long endTime = System.nanoTime();
 
-    return Duration.between(startTime, endTime).getSeconds();
+    return endTime - startTime;
   }
 }

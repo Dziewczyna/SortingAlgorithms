@@ -4,7 +4,7 @@ public class SelectionSort implements SortingAlgorithm {
 
   @Override
   public long sort(int numberOfNumbersToSort, int[] tab) {
-    long startTime = System.currentTimeMillis();
+    long startTime = System.nanoTime();
 
     for (int i = 0; i < tab.length; i++) {
       int minIndex = i;
@@ -15,7 +15,7 @@ public class SelectionSort implements SortingAlgorithm {
       tab[i] = tab[minIndex];
       tab[minIndex] = temp;
     }
-    long endTime = System.currentTimeMillis();
+    long endTime = System.nanoTime();
 
     return endTime - startTime;
   }
