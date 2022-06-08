@@ -3,7 +3,7 @@ package com.sorting;
 public class SelectionSort implements SortingAlgorithm {
 
   @Override
-  public long sort(int numberOfNumbersToSort, int[] tab) {
+  public long sort(int[] tab) {
     long startTime = System.nanoTime();
 
     for (int i = 0; i < tab.length; i++) {

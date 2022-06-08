@@ -28,17 +28,26 @@ public class Sorting {
         elapsedTime("select", 100),
         elapsedTime("select", 1000),
         elapsedTime("select", 10_000));
+    System.out.println("\n");
+    System.out.printf(
+            "MergeSort  |    %d     |    %d    |    %d    |    %d    |",
+            elapsedTime("merge", 10),
+            elapsedTime("merge", 100),
+            elapsedTime("merge", 1000),
+            elapsedTime("merge", 10_000));
   }
 
   private static long elapsedTime(String algorithm, int numberOfInts) {
     BubbleSort bubbleSort = new BubbleSort();
     InsertSort insertSort = new InsertSort();
     SelectionSort selectSort = new SelectionSort();
+    MergeSort mergeSort = new MergeSort();
     int[] numbersToSort = generateRandomInts(numberOfInts);
     return switch (algorithm) {
-      case "bubble" -> bubbleSort.sort(numberOfInts, numbersToSort);
-      case "insert" -> insertSort.sort(numberOfInts, numbersToSort);
-      case "select" -> selectSort.sort(numberOfInts, numbersToSort);
+      case "bubble" -> bubbleSort.sort(numbersToSort);
+      case "insert" -> insertSort.sort(numbersToSort);
+      case "select" -> selectSort.sort(numbersToSort);
+      case "merge" -> mergeSort.sort(numbersToSort);
       default -> 0;
     };
   }

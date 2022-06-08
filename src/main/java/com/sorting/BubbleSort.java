@@ -2,9 +2,9 @@ package com.sorting;
 
 public class BubbleSort implements SortingAlgorithm {
 
-  public long sort(int numberOfNumbers, int[] tab) {
-    int originalNumberOfNumbers = numberOfNumbers;
-
+  public long sort(int[] tab) {
+    int originalNumberOfNumbers = tab.length;
+    int numberOfNumbers = tab.length;
     long startTime = System.nanoTime();
     do {
       for (int i = 0; i < numberOfNumbers - 1; i++) {
